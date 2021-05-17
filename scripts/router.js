@@ -5,7 +5,7 @@ export const router = {};
 /**
  * Changes the "page" (state) that your SPA app is currently set to
  */
-router.setState = function(state, url) {
+router.setState = function(state) {
   /**
    * - There are three states that your SPA app will have
    *    1. The home page
@@ -35,16 +35,32 @@ router.setState = function(state, url) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
+  var url = "";
    if(state == "Main"){
     document.querySelector('body').classList = [];
     document.querySelector('h1').innerHTML = "Journal Entries";
-   }else if(state == "single-entry"){
-     document.querySelector('body').className = state;
-     var num = window.location.toString().substring(window.location.toString().indexOf("Entry")+5);
-     document.querySelector('h1').innerHTML = "Entry " + num;
+    url = "";
    }else if(state == "settings"){
     document.querySelector('body').className = state;
     document.querySelector('h1').innerHTML = "Settings";
-  }
-   history.pushState(state, state, url);
+    url = "#Settings";
+   }else{
+     document.querySelector('body').className = "single-entry";
+     document.querySelector('h1').innerHTML = "Entry " + state.substring(12);
+     url =  "#Entry"+state.substring(12);
+   }
+   history.pushState(state, "", url);
+}
+
+router.backState = function(state) {
+   if(state == "Main"){
+    document.querySelector('body').classList = [];
+    document.querySelector('h1').innerHTML = "Journal Entries";
+   }else if(state == "settings"){
+    document.querySelector('body').className = state;
+    document.querySelector('h1').innerHTML = "Settings";
+   }else{
+     document.querySelector('body').className = "single-entry";
+     document.querySelector('h1').innerHTML = "Entry " + state.substring(12);
+   }
 }

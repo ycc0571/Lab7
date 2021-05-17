@@ -2,7 +2,6 @@
 
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
 const setState = router.setState;
-const mainurl = window.location;
 // Make sure you register your service worker here too
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
       });
     });
-    router.setState("Main", mainurl);
+
 });
 
 
 
 window.addEventListener('popstate', (event) => {
-  console.log(event.state.path);
+  router.backState(event.state);
 });
 
 
@@ -38,19 +37,19 @@ document.querySelector('main').addEventListener('click', (e) => {
   var page = document.createElement('entry-page');
   page.entry = document.getElementsByTagName('journal-entry')[i].entry;
   document.querySelector('main').after(page);
-  router.setState("single-entry", "#Entry"+ (i+1));
+  router.setState("single-entry"+(i+1));
 });
 
 
 
 document.querySelector('header > img').addEventListener('click', (e) => {
-  router.setState("settings", "#Settings");
+  router.setState("settings");
 });
 
 
 
 document.querySelector('header > h1').addEventListener('click', (e) => {
-  router.setState("Main", mainurl);
+  router.setState("Main");
 });
 
 
