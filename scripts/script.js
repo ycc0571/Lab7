@@ -38,8 +38,7 @@ document.querySelector('main').addEventListener('click', (e) => {
   var page = document.createElement('entry-page');
   page.entry = document.getElementsByTagName('journal-entry')[i].entry;
   document.querySelector('main').after(page);
-  var num = "" + (i+1)
-  router.setState("single-entry", "#Entry"+ num);
+  router.setState("single-entry", "#Entry"+ (i+1));
 });
 
 
@@ -51,7 +50,7 @@ document.querySelector('header > img').addEventListener('click', (e) => {
 
 
 document.querySelector('header > h1').addEventListener('click', (e) => {
-  router.setState("main", );
+  router.setState("main", "");
 });
 
 
