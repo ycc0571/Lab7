@@ -34,18 +34,17 @@ document.querySelector('main').addEventListener('click', (e) => {
       break;
     }
   }
-  document.querySelector('h1').innerHTML = "Entry " + (i + 1);
   document.querySelector('entry-page').remove();
   var page = document.createElement('entry-page');
   page.entry = document.getElementsByTagName('journal-entry')[i].entry;
   document.querySelector('main').after(page);
-  router.setState("single-entry", "#Entry"+(i+1));
+  var num = "" + (i+1)
+  router.setState("single-entry", "#Entry"+ num);
 });
 
 
 
 document.querySelector('header > img').addEventListener('click', (e) => {
-  document.querySelector('h1').innerHTML = "Settings";
   router.setState("settings", "#Settings");
 });
 
