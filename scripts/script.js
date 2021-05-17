@@ -2,7 +2,7 @@
 
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
 const setState = router.setState;
-
+const mainurl = window.location;
 // Make sure you register your service worker here too
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
       });
     });
-    router.setState("main", "https://ycc0571.github.io/Lab7/");
+    router.setState("Main", mainurl);
 });
 
 
 
 window.addEventListener('popstate', (event) => {
-  router.setState(event.state, document.location);
+  router.setState(event.state, event.state.path);
 });
 
 
@@ -50,7 +50,7 @@ document.querySelector('header > img').addEventListener('click', (e) => {
 
 
 document.querySelector('header > h1').addEventListener('click', (e) => {
-  router.setState("main", "https://ycc0571.github.io/Lab7/");
+  router.setState("Main", mainurl);
 });
 
 

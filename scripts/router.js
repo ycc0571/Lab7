@@ -35,10 +35,9 @@ router.setState = function(state, url) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
-   if(state == "main"){
+   if(state == "Main"){
     document.querySelector('body').classList = [];
     document.querySelector('h1').innerHTML = "Journal Entries";
-    url = "https://ycc0571.github.io/Lab7/";
    }else if(state == "single-entry"){
      document.querySelector('body').className = state;
      var num = url.toString().substring(url.toString().indexOf("Entry")+5);
@@ -48,4 +47,5 @@ router.setState = function(state, url) {
     document.querySelector('h1').innerHTML = "Settings";
   }
    history.pushState(state, state, url);
+   console.log(history);
 }
