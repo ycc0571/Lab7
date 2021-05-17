@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
       });
     });
-
+  router.setState("Main");
 });
 
 
