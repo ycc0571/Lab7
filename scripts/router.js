@@ -38,6 +38,7 @@ router.setState = function(state, url) {
    if(state == "main"){
     document.querySelector('body').classList = [];
     document.querySelector('h1').innerHTML = "Journal Entries";
+    url = "https://ycc0571.github.io/Lab7/";
    }else if(state == "single-entry"){
      document.querySelector('body').className = state;
      var num = url.toString().substring(url.toString().indexOf("Entry")+5);
