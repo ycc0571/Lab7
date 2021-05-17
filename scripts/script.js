@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
       });
     });
-    router.setState("main", "http://127.0.0.1:5500/index.html");
+    router.setState("main", "https://ycc0571.github.io/Lab7/");
 });
 
 
@@ -41,16 +41,16 @@ document.querySelector('main').addEventListener('click', (e) => {
   console.log(page);
   document.querySelector('main').after(page);
   console.log(document.querySelector('entry-page'));
-  router.setState("single-entry", "http://127.0.0.1:5500/index.html/#Entry"+(i+1));
+  router.setState("single-entry", "https://ycc0571.github.io/Lab7/#Entry"+(i+1));
 });
 
 document.querySelector('header > img').addEventListener('click', (e) => {
   document.querySelector('h1').innerHTML = "Settings";
-  router.setState("settings", "http://127.0.0.1:5500/index.html/#Settings");
+  router.setState("settings", "https://ycc0571.github.io/Lab7/#Settings");
 });
 
 document.querySelector('header > h1').addEventListener('click', (e) => {
-  router.setState("main", "http://127.0.0.1:5500/index.html");
+  router.setState("main", "https://ycc0571.github.io/Lab7/");
 });
 
 
