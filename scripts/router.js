@@ -40,12 +40,11 @@ router.setState = function(state, url) {
     document.querySelector('h1').innerHTML = "Journal Entries";
    }else if(state == "single-entry"){
      document.querySelector('body').className = state;
-     var num = url.toString().substring(url.toString().indexOf("Entry")+5);
+     var num = window.location.toString().substring(window.location.toString().indexOf("Entry")+5);
      document.querySelector('h1').innerHTML = "Entry " + num;
    }else if(state == "settings"){
     document.querySelector('body').className = state;
     document.querySelector('h1').innerHTML = "Settings";
   }
    history.pushState(state, state, url);
-   console.log(history);
 }

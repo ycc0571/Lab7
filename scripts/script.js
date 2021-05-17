@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 window.addEventListener('popstate', (event) => {
-  router.setState(event.state, event.state.path);
+  console.log(event.state.path);
 });
 
 
