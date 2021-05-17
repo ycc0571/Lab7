@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
       });
     });
-    router.setState("main", "");
+    router.setState("main", "https://ycc0571.github.io/Lab7/");
 });
 
 
@@ -50,7 +50,7 @@ document.querySelector('header > img').addEventListener('click', (e) => {
 
 
 document.querySelector('header > h1').addEventListener('click', (e) => {
-  router.setState("main", "");
+  router.setState("main", "https://ycc0571.github.io/Lab7/");
 });
 
 
